@@ -15,19 +15,29 @@ git clone https://github.com/a1div0/ide-debug.git
 ```
 * install the `ide-debug` module using `tarantoolctl`:
 ```shell
-tarantoolctl rocks install https://raw.githubusercontent.com/a1div0/ide-debug/main/ide-debug-1.0.0-1.rockspec
+tarantoolctl rocks install https://raw.githubusercontent.com/a1div0/ide-debug/main/ide-debug-1.0.1-1.rockspec
 ```
 
 ## Usage
-1. In your project add require on this lib:
-```lua
-require('ide-debug')
+1. Install EmmyLua
+2. Put breakpoints
+3. Run your script with the port pointing to the same port
+   as you chose in settings EmmyDebugger:
+
+### Variant 1
+Not invasive:
+```shell
+tarantool -l ide_debug --dbg_port=9966 example.lua
 ```
 
-2. Run your script with the key pointing to the same port
-as you chose in settings EmmyDebugger: `--dbg_port=9966`. Example:
-```shell
-tarantool example.lua --dbg_port=9966
+### Variant 2
+Invasive:
+1. In your project add this code:
+```lua
+require('ide-debug').run(9966)
 ```
-3. Put breakpoint and run Debug.
-4. Enjoy...
+
+2.  Run, example:
+```shell
+tarantool example.lua
+```

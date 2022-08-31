@@ -1,8 +1,12 @@
 local dbg = require('emmy_core')
 
-dbg.enable_debugger = function(port)
+dbg.run = function(port)
     dbg.tcpListen('localhost', port)
     dbg.waitIDE()
+end
+
+dbg.enable_debugger = function(port)
+    dbg.run(port)
 end
 
 for _, arg_i in ipairs(arg) do
