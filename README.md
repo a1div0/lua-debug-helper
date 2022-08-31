@@ -25,9 +25,9 @@ tarantoolctl rocks install https://raw.githubusercontent.com/a1div0/ide-debug/ma
    as you chose in settings EmmyDebugger:
 
 ### Variant 1
-Not invasive:
+Not invasive (the order of the arguments is important):
 ```shell
-tarantool -l ide_debug --dbg_port=9966 example.lua
+tarantool -l ide_debug example.lua --dbg_port=9966
 ```
 
 ### Variant 2
