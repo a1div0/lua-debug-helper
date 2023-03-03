@@ -1,9 +1,9 @@
 package = 'ide-debug'
-version = '1.0.0-1'
+version = '1.0.1-1'
 source  = {
     url    = 'git+https://github.com/a1div0/ide-debug.git',
     branch = 'main',
-    tag = '1.0.0',
+    tag = '1.0.1',
 }
 description = {
     summary  = "Module for IDE Lua debug based EmmyLua Debugger",
