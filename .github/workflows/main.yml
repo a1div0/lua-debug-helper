@@ -1,0 +1,21 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Tarantool
+        run: | 
+          curl -L https://tarantool.io/eHAFdDf/release/2/installer.sh | bash
+          sudo apt-get -y install tarantool
+
+      - name: Run app tests
+        run: make test

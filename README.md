@@ -3,7 +3,7 @@
     width="250" align="right">
 </a>
 
-# ide-debug
+# lua-debug-helper
 Module for IDE Lua debug. This is an add-on for
 [EmmyLua Debugger](https://github.com/EmmyLua/EmmyLuaDebugger)
 
@@ -11,11 +11,11 @@ Module for IDE Lua debug. This is an add-on for
 You can:
 * clone the repository:
 ``` shell
-git clone https://github.com/a1div0/ide-debug.git
+git clone https://github.com/a1div0/lua-debug-helper.git
 ```
-* install the `ide-debug` module using `tarantoolctl`:
+* install the `lua-debug-helper` module using `tarantoolctl`:
 ```shell
-tarantoolctl rocks install https://raw.githubusercontent.com/a1div0/ide-debug/main/ide-debug-1.0.1-1.rockspec
+tarantoolctl rocks install https://raw.githubusercontent.com/a1div0/lua-debug-helper/main/lua-debug-helper-1.0.2-1.rockspec
 ```
 
 ## Usage
@@ -27,14 +27,16 @@ tarantoolctl rocks install https://raw.githubusercontent.com/a1div0/ide-debug/ma
 ### Variant 1
 Not invasive (the order of the arguments is important):
 ```shell
-tarantool -l ide_debug example.lua --dbg_port=9966
+tarantool -l lua-debug-helper example.lua --dbg_port=9966
 ```
 
 ### Variant 2
 Invasive:
 1. In your project add this code:
 ```lua
-require('ide-debug').run(9966)
+require('lua-debug-helper').run(9999)
+-- or
+require('lua-debug-helper').run() -- default port is 9966
 ```
 
 2.  Run, example:

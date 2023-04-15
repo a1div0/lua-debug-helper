@@ -1,12 +1,13 @@
-package = 'ide-debug'
-version = 'scm-1'
+package = 'lua-debug-helper'
+version = '1.0.2-1'
 source  = {
-    url    = 'git+https://github.com/a1div0/ide-debug.git',
+    url    = 'git+https://github.com/a1div0/lua-debug-helper.git',
     branch = 'main',
+    tag = '1.0.2',
 }
 description = {
     summary  = "Module for IDE Lua debug based EmmyLua Debugger",
-    homepage = 'https://github.com/a1div0/ide-debug',
+    homepage = 'https://github.com/a1div0/lua-debug-helper',
     maintainer = "Alexander Klenov <a.a.klenov@ya.ru>",
     license  = 'None',
 }
@@ -16,9 +17,9 @@ dependencies = {
 build = {
     type = 'builtin',
     modules = {
-        ['ide-debug'] = 'ide-debug/init.lua',
+        ['lua-debug-helper'] = 'lua-debug-helper/init.lua',
     },
     install = {
-        lib = {'ide-debug/emmy_core.so'},
+        lib = {'lua-debug-helper/emmy_core.so'},
     }
 }
